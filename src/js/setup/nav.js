@@ -1,24 +1,14 @@
+import { loadHome } from '../pages/home.js';
+import { loadMenu } from '../pages/menu.js';
+import { loadContact } from '../pages/contact.js';
+
 const pages = {
-  home: 'Home',
-  menu: 'Menu',
-  contact: 'Contact Us',
+  home: { name: 'Home', load: loadHome },
+  menu: { name: 'Menu', load: loadMenu },
+  contact: { name: 'Contact Us', load: loadContact },
 };
 
-export function createHeader() {
-  const header = document.createElement('header');
-
-  const logo = document.createElement('div');
-  header.appendChild(logo);
-  logo.id = 'logo';
-  logo.textContent = `Mitchin's Kitchen`;
-
-  const nav = createNav();
-  header.appendChild(nav);
-
-  return header;
-}
-
-function createNav() {
+export function createNav() {
   const nav = document.createElement('nav');
 
   const navList = document.createElement('ul');
@@ -36,9 +26,9 @@ function createNavButtons(page) {
   const button = document.createElement('button');
   listItem.appendChild(button);
 
-  button.textContent = pages[page];
+  button.textContent = pages[page].name;
   button.addEventListener('click', () => {
-    console.log(pages[page]);
+    pages[page].load();
   });
 
   return listItem;

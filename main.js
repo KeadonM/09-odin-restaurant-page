@@ -1,8 +1,6 @@
 import './reset.css';
 import './style.css';
 
-import { createHeader } from './header.js';
+import { load } from './src/js/setup/website.js';
 
-const app = document.querySelector('#app');
-
-app.appendChild(createHeader());
+load();

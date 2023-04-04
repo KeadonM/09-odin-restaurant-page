@@ -3,6 +3,7 @@
   --clr-neutral-100: hsl(0, 0%, 99%);
   --clr-neutral-200: hsl(0, 0%, 80%);
   --clr-neutral-300: hsl(0, 0%, 66%);
+  --clr-neutral-400: hsl(0, 0%, 50%);
   --clr-neutral-500: hsl(0, 0%, 33%);
   --clr-neutral-600: hsl(0, 0%, 16%);
   --clr-neutral-700: hsl(0, 0%, 11%);
@@ -43,7 +44,25 @@
   --shadow: 0px 1px 2px rgba(0, 0, 0, 0.14);
 }
 
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+footer,
 header {
-  background-color: var(--clr-neutral-200);
+  display: flex;
+  background-color: var(--clr-neutral-400);
   height: 8vh;
+}
+
+nav > ul {
+  display: flex;
+}
+
+main {
+  background-color: var(--clr-neutral-200);
+
+  flex-grow: 1;
 }
