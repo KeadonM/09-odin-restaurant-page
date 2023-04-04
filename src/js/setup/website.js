@@ -9,7 +9,7 @@ function createHeader() {
   const logo = document.createElement('div');
   header.appendChild(logo);
   logo.id = 'logo';
-  logo.textContent = `Mitchin's Kitchen`;
+  logo.textContent = `Old Dough Pizzeria`;
 
   const nav = createNav();
   header.appendChild(nav);
@@ -29,7 +29,7 @@ function createFooter() {
 
   const credit = document.createElement('div');
   footer.appendChild(credit);
-  credit.class = 'credit';
+  credit.classList.add('credit');
   credit.innerHTML = `
   <a id="copyright" href="https://github.com/keadonm" target="_blank">
     Copyright ©
@@ -39,9 +39,6 @@ function createFooter() {
     KeadonM
     <i class="fab fa-github"></i>
   </a>`;
-
-  const nav = createNav();
-  footer.appendChild(nav);
 
   return footer;
 }

@@ -5,7 +5,7 @@ import { loadContact } from '../pages/contact.js';
 const pages = {
   home: { name: 'Home', load: loadHome },
   menu: { name: 'Menu', load: loadMenu },
-  contact: { name: 'Contact Us', load: loadContact },
+  contact: { name: 'Contact', load: loadContact },
 };
 
 export function createNav() {
@@ -25,6 +25,7 @@ function createNavButtons(page) {
   const listItem = document.createElement('li');
   const button = document.createElement('button');
   listItem.appendChild(button);
+  button.classList.add('nav-btn');
 
   button.textContent = pages[page].name;
   button.addEventListener('click', () => {
